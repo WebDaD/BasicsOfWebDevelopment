@@ -1,22 +1,31 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{book}
+\documentclass[12pt]{book}
+
+\author{Dominik Sigmund}
+\title{Basics of WebDevelopment}
+\renewcommand{\abstractname}{Introduction}
 
 \begin{document}
+\maketitle
+
+\begin{abstract}
+Your abstract goes here...
+...
+\end{abstract}
+
+\tableofcontents
+
+\part{Basics}
+
+\input{chapters/html}
+
+\input{chapters/css}
+
+\input{chapters/php}
+
+\input{chapters/javascript}
 
 
-\section{Title}
+\part{Example}
 
-\subsection{Subtitle}
-
-Plain text. to testghujcghjgvhjjh
-
-\subsection{Another subtitle}
-
-More plain text.
-
-\subsection{Another subtitle}
-
-More plain text.
 
 \end{document}
