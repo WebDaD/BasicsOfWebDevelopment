@@ -1,0 +1,31 @@
+\section{DNS}
+Das Domain Name System (DNS) ist einer der wichtigsten Dienste im Internet. Seine Hauptaufgabe ist die Beantwortung von Anfragen zur Namensauflösung.
+
+Internetadressen bestehen immer aus mehreren Teilen.
+Der erste Teil ist der Name des Computers, auf dem der Web-Server läuft und der die Seite bereitstellt, meistens ist das www.
+Der zweite Teil ist der Name der Domain und der dritte der Name der übergeordneten Domain, zum Beispiel .de oder .com.
+
+In Analogie zu einer Telefonauskunft soll DNS bei Anfrage mit einem Hostnamen (dem „Adressaten“ im Internet – zum Beispiel www.example.org) als Antwort die zugehörige IP-Adresse (die „Anschlussnummer“ – zum Beispiel 192.0.2.42) nennen.
+
+Das DNS ist ein weltweit auf tausende von Servern verteilter hierarchischer Verzeichnisdienst, der den Namensraum des Internets verwaltet. 
+Dieser Namensraum ist in so genannte Zonen unterteilt, für die jeweils unabhängige Administratoren zuständig sind. Für lokale Anforderungen – etwa innerhalb eines Firmennetzes – ist es auch möglich, ein vom Internet unabhängiges DNS zu betreiben.
+
+Hauptsächlich wird das DNS zur Umsetzung von Domainnamen in IP-Adressen („forward lookup“) benutzt. Dies ist vergleichbar mit einem Telefonbuch, das die Namen der Teilnehmer in ihre Telefonnummer auflöst. Das DNS bietet somit eine Vereinfachung, weil Menschen sich Namen weitaus besser merken können als Zahlenkolonnen. 
+So kann man sich einen Domainnamen wie example.org in der Regel leichter merken als die dazugehörende IP-Adresse 208.77.188.166.
+
+Da aber nicht jeder DNS-Server alle Adressen kennen kann, wird hier das Verfahren der Delegierung verwendet. Das heißt, der Server weiß, wen er fragen muss.
+Dazu ein Beispiel:
+Ich sitze an meinem Rechner und möchte die Seite www.icanhascheeseburger.com aufrufen. Diese Anfrage leitet mein Browser an den DNS-Server meines Providers weiter.
+Da dieser die Adresse nicht kennt, schickt er meinem Browser die IP-Adresse eines der 13 Root-Server, den mein Browser daraufhin fragt. Der Root-Server kennt die Adresse auch nicht, weiß aber, welcher DNS-Server für die Endung .com verantwortlich ist und schickt diese IP-Adresse zurück.
+Jetzt frägt mein Browser diesen Server. Auch er kennt die Adresse nicht, weiß aber, welcher DNS-Server für icanhascheeseburger verantwortlich ist und leitet die Anfrage über meinen Web-Browser auf diesen Server weiter.
+Der kennt endlich den Computer mit dem Namen www und schickt mir dessen IP-Adresse, so dass der Inhalt der Seite geladen werden kann.
+Dies alles funktioniert in Millisekunden.
+
+Ein weiterer Vorteil ist, dass IP-Adressen – etwa von Web-Servern – relativ risikolos geändert werden können. Da Internetteilnehmer nur den (unveränderten) DNS-Namen ansprechen, bleiben ihnen Änderungen der untergeordneten IP-Ebene weitestgehend verborgen. 
+Da einem Namen auch mehrere IP-Adressen zugeordnet werden können, kann sogar eine rudimentäre Lastverteilung per DNS (Load Balancing) realisiert werden.
+
+Mit dem DNS ist auch eine umgekehrte Auflösung von IP-Adressen in Namen („reverse lookup“) möglich. In Analogie zum Telefonbuch entspricht dies einer Suche nach dem Namen eines Teilnehmers zu einer bekannten Rufnummer, was innerhalb der Telekommunikationsbranche unter dem Namen Inverssuche bekannt ist.
+
+Das DNS wurde 1983 von Paul Mockapetris entworfen und in RFC 882 und 883 beschrieben. Beide wurden inzwischen von RFC 1034 und RFC 1035 abgelöst und durch zahlreiche weitere Standards ergänzt. 
+Ursprüngliche Aufgabe war es, die lokalen hosts-Dateien abzulösen, die bis dahin für die Namensauflösung zuständig waren und die der enorm zunehmenden Zahl von Neueinträgen nicht mehr gewachsen waren.
+Aufgrund der erwiesenermaßen hohen Zuverlässigkeit und Flexibilität wurden nach und nach weitere Datenbestände in das DNS integriert und so den Internetnutzern zur Verfügung gestellt.
